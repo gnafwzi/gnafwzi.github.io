@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-09-14 Tue 16:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chapter 1 Getting Started</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Zhi-Wei Fang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style>pre.src{background-color: #E6E6E6;} code{background-color: #E6E6E6;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Chapter 1 Getting Started</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc00427c">Chapter 1 Getting Started | 开始</a>
+<ul>
+<li><a href="#orge481033">Section 1.1 Writing a Simple C++ Program | 编写一个简单的 C++ 程序</a>
+<ul>
+<li><a href="#org6bd7f1f">1.1.1 Compiling and Executing Our Program | 编译, 运行程序</a></li>
+</ul>
+</li>
+<li><a href="#org56f2231">Section 1.2 A First Look at Input/Output | 初识输入输出</a></li>
+<li><a href="#org1cd54ee">Section 1.3 A Word about Comments | 注释简介</a></li>
+<li><a href="#orgbd3a65a">Section 1.4 Flow of Control | 控制流</a>
+<ul>
+<li><a href="#org5551d84">1.4.1 The <code>while</code> Statement | <code>while</code> 语句</a></li>
+<li><a href="#orgdfc016c">1.4.2 The <code>for</code> Statement | <code>for</code> 语句</a></li>
+<li><a href="#org1f86835">1.4.3 Reading an Unknown Number of Inputs | 读取数量不定的输入数据</a></li>
+<li><a href="#org2e164fe">1.4.4 The <code>if</code> Statement | <code>if</code> 语句</a></li>
+</ul>
+</li>
+<li><a href="#org6bc6ad1">Section 1.5 Introducing Classes | 类简介</a>
+<ul>
+<li><a href="#org655dbad">1.5.1 <code>Sales_item</code> 类</a></li>
+<li><a href="#org8cede66">1.5.2 A First Look at Member Functions | 初识成员函数</a></li>
+</ul>
+</li>
+<li><a href="#orgf669c7d">Section 1.6 The Bookstore Program | 书店程序</a></li>
+<li><a href="#org8835538">Chapter Summary | 小结</a></li>
+<li><a href="#org1af6580">Defined Terms | 术语表</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc00427c" class="outline-2">
+<h2 id="orgc00427c">Chapter 1 Getting Started | 开始</h2>
+<div class="outline-text-2" id="text-orgc00427c">
+<p>
+<b>书店问题</b>: 书店保存所有销售记录的档案, 查询此档案, 计算每本书的销售量, 销售额及平均售价.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">ISBN</th>
+<th scope="col" class="org-left">销量</th>
+<th scope="col" class="org-left">单价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">0-201-70353-X</td>
+<td class="org-left">4</td>
+<td class="org-left">24.99</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orge481033" class="outline-3">
+<h3 id="orge481033">Section 1.1 Writing a Simple C++ Program | 编写一个简单的 C++ 程序</h3>
+<div class="outline-text-3" id="text-orge481033">
+<p>
+每个 C++ 程序包含一个或多个函数, 其中一个必须命名为 <code>main</code>. 操作系统通过调用 <code>main</code> 来运行 C++ 程序.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">main &#20989;&#25968;: &#36820;&#22238;&#32473;&#25805;&#20316;&#31995;&#32479;&#19968;&#20010;&#20540;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+函数的定义包括返回类型, 函数名, 形参列表和函数体.
+</p>
+
+<p>
+<code>main</code> 函数的返回类型必须为 <code>int</code> 整数类型. <code>main</code> 函数的返回值用于指示状态: 0 表明成功, 非 0 通常用来指出错误类型.
+</p>
+
+<p>
+<code>return</code> 结束函数的执行. 当 <code>return</code> 返回一个值时，该返回值的类型必须与函数的返回类型相容.
+</p>
+</div>
+
+<div id="outline-container-org6bd7f1f" class="outline-4">
+<h4 id="org6bd7f1f">1.1.1 Compiling and Executing Our Program | 编译, 运行程序</h4>
+<div class="outline-text-4" id="text-org6bd7f1f">
+<p>
+C++ 源文件常见的后缀命名约定包括: <code>.cc</code>, <code>.cxx</code>, <code>.cpp</code>, <code>.cp</code>, <code>.C</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#32534;&#35793;, &#25191;&#34892; C++ &#28304;&#25991;&#20214;, &#33719;&#21462;&#36820;&#22238;&#20540;</span>
+$<span style="color: #a0522d;">CC</span> program-1.cc          <span style="color: #b22222;">#  </span><span style="color: #b22222;">$ &#20026;&#31995;&#32479;&#25552;&#31034;&#31526;, CC &#20026;&#32534;&#35793;&#22120;&#30340;&#21517;&#23383;, &#32534;&#35793;&#22120;&#29983;&#25104;&#21487;&#25191;&#34892;&#25991;&#20214;</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Windows &#31995;&#32479;</span>
+$.\program-1              <span style="color: #b22222;"># </span><span style="color: #b22222;">&#40664;&#35748;&#36755;&#20986; program-1.exe</span>
+$<span style="color: #a0522d;">echo</span> %ERRORLEVEL%       <span style="color: #b22222;"># </span><span style="color: #b22222;">&#33719;&#21462;&#36820;&#22238;&#20540;</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Unix &#21644; Unix-like &#31995;&#32479;</span>
+$./a.out                 <span style="color: #b22222;"># </span><span style="color: #b22222;">&#36890;&#24120;&#36755;&#20986; a.out</span>
+$<span style="color: #a0522d;">echo</span> $<span style="color: #a0522d;">?</span>                 <span style="color: #b22222;"># </span><span style="color: #b22222;">&#33719;&#21462;&#36820;&#22238;&#20540;</span>
+</pre>
+</div>
+
+<p>
+Windows 系统运行可执行文件可以忽略拓展名 <code>.exe</code>, Unix 和 Unix-like 系统需要使用全名.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">GCC &#32534;&#35793;&#22120;</span>
+$<span style="color: #a0522d;">g</span>++ -o program-1 program-1.cc <span style="color: #b22222;"># </span><span style="color: #b22222;">-o program1 &#25351;&#23450;&#21487;&#25191;&#34892;&#25991;&#20214;&#30340;&#25991;&#20214;&#21517;</span>
+$<span style="color: #a0522d;">g</span>++ -std=c++11 program-1.cc  <span style="color: #b22222;"># </span><span style="color: #b22222;">-std=c++11 &#25171;&#24320; C++11 &#30340;&#25903;&#25345;</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">MSVC &#32534;&#35793;&#22120;</span>
+$<span style="color: #a0522d;">cl</span> /EHsc program-1.cc        <span style="color: #b22222;"># </span><span style="color: #b22222;">/EHsc &#25171;&#24320;&#26631;&#20934;&#24322;&#24120;&#22788;&#29702;</span>
+</pre>
+</div>
+
+<p>
+GCC 编译器的 <code>-Wall</code> 选项和 MSVC 编译器的 <code>/W4</code> 选项可以对有问题的程序结构发出警告.
+</p>
+
+<p>
+<b>Exercise 1.1</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.2</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #a020f0;">return</span> -1;
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sh">$<span style="color: #a0522d;">g</span>++ -std=c++11 exercise-01-02.cc
+$./a.out
+$<span style="color: #a0522d;">echo</span> $<span style="color: #a0522d;">?</span> <span style="color: #b22222;"># </span><span style="color: #b22222;">&#36820;&#22238;&#20540;&#20026; 255</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56f2231" class="outline-3">
+<h3 id="org56f2231">Section 1.2 A First Look at Input/Output | 初识输入输出</h3>
+<div class="outline-text-3" id="text-org56f2231">
+<p>
+<code>iostream</code> 库包括输入流 <code>istream</code>, 输出流 <code>ostream</code> 等. 标准库定义了 4 个 IO 对象: 标准输入 <code>cin</code>, 标准输出 <code>cout</code>, 标准错误 <code>cerr</code> 和 <code>clog</code>. <code>cerr</code> 输出警告和错误消息, <code>clog</code> 输出程序运行时的一般性信息.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#25552;&#31034;&#29992;&#25143;&#36755;&#20837;&#20004;&#20010;&#25972;&#25968;&#65292;&#36755;&#20986;&#23427;&#20204;&#30340;&#21644;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>                                                                                                <span style="color: #b22222;">// </span><span style="color: #b22222;">#include &#25351;&#20196;&#25351;&#20986;&#22836;&#25991;&#20214;, &#19968;&#33324;&#25918;&#22312;&#28304;&#25991;&#20214;&#30340;&#24320;&#22987;&#20301;&#32622;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;                                                                 <span style="color: #b22222;">// </span><span style="color: #b22222;">&#20316;&#29992;&#22495;&#36816;&#31639;&#31526; ::, &#34920;&#31034;&#20351;&#29992;&#23450;&#20041;&#22312;&#21629;&#21517;&#31354;&#38388;&#20013;&#30340;&#21517;&#23383;</span>
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The sum of "</span> &lt;&lt; variable_1 &lt;&lt; <span style="color: #8b2252;">" and "</span> &lt;&lt; variable_2 &lt;&lt; <span style="color: #8b2252;">" is "</span> &lt;&lt; variable_1 + variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl; <span style="color: #b22222;">// </span><span style="color: #b22222;">endl &#20026;&#25805;&#32437;&#31526;&#30340;&#29305;&#27530;&#20540;, &#32467;&#26463;&#24403;&#21069;&#34892;, &#24182;&#23558;&#19982;&#35774;&#22791;&#20851;&#32852;&#30340;&#32531;&#20914;&#21306;&#20013;&#30340;&#20869;&#23481;&#21047;&#21040;&#35774;&#22791;</span>
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+输出运算符 <code>&lt;&lt;</code>, 左侧为 <code>ostream</code> 对象, 右侧为要打印的值.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+(<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span>) &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span>;
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+</pre>
+</div>
+
+<p>
+输入运算符 <code>&gt;&gt;</code>, 左侧为 <code>istream</code> 对象, 右侧为要读入的数据.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+(<span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1) &gt;&gt; variable_2;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+<span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1;
+<span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_2;
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.3</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Hello, World"</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.4</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The product of "</span> &lt;&lt; variable_1 &lt;&lt; <span style="color: #8b2252;">" and "</span> &lt;&lt; variable_2 &lt;&lt; <span style="color: #8b2252;">" is "</span> &lt;&lt; variable_1 * variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.5</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers: "</span>;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The product of "</span>;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_1;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">" and "</span>;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">" is "</span>;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_1 * variable_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.6</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The sum of "</span> &lt;&lt; variable_1;
+          &lt;&lt; <span style="color: #8b2252;">" and "</span> &lt;&lt; variable_2;                         <span style="color: #b22222;">// </span><span style="color: #b22222;">&#19981;&#21512;&#27861;</span>
+          &lt;&lt; <span style="color: #8b2252;">" is "</span> &lt;&lt; variable_1 + variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl; <span style="color: #b22222;">// </span><span style="color: #b22222;">&#19981;&#21512;&#27861;</span>
+
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#20462;&#25913;&#21518;</span>
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"The sum of "</span> &lt;&lt; variable_1;
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">" and "</span> &lt;&lt; variable_2;
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">" is "</span> &lt;&lt; variable_1 + variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1cd54ee" class="outline-3">
+<h3 id="org1cd54ee">Section 1.3 A Word about Comments | 注释简介</h3>
+<div class="outline-text-3" id="text-org1cd54ee">
+<p>
+C++ 包括两种注释: 单行注释 <code>//</code>, 界定符注释 <code>/* */</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#27880;&#37322;&#30028;&#23450;&#31526;&#19981;&#33021;&#23884;&#22871;, &#20026;&#20102;&#36991;&#20813;&#23884;&#22871;&#38169;&#35823;, &#24314;&#35758;&#20351;&#29992;&#21333;&#34892;&#27880;&#37322;&#26469;&#27880;&#37322;&#27599;&#19968;&#34892;&#20195;&#30721;</span>
+<span style="color: #b22222;">/*</span>
+<span style="color: #b22222;"> * &#27880;&#37322;&#23545; /* */</span> &#19981;&#33021;&#23884;&#22871;
+ */
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.7</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #b22222;">/*</span>
+<span style="color: #b22222;"> * &#23884;&#22871;&#27880;&#37322; /* */</span>
+ */
+<span style="color: #228b22;">int</span> main() {
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sh">exercise-01-07.cc:4:3: error: expected unqualified-id before &#8216;/&#8217; token
+    4 |  */
+      |   ^
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.8</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"/*"</span>;
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"*/"</span>;
+<span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #b22222;">/* </span><span style="color: #b22222;">""*/</span><span style="color: #8b2252;">" */;</span>
+<span style="color: #8b2252;">std::cout &lt;&lt; /* "</span>*/<span style="color: #8b2252;">" /* "</span><span style="color: #b22222;">/*</span><span style="color: #b22222;">" */</span>;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#21482;&#26377;&#31532; 3 &#26465;&#35821;&#21477;&#19981;&#21512;&#27861;</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #b22222;">/* </span><span style="color: #b22222;">""*/</span><span style="color: #8b2252;">" */;</span>
+<span style="color: #8b2252;">  return 0;</span>
+<span style="color: #8b2252;">}</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sh">exercise-01-08.cc:3:23: warning: missing terminating <span style="color: #8b2252;">" character</span>
+<span style="color: #8b2252;">    3 |   std::cout &lt;&lt; /* ""*/"</span> */;
+      |                       ^
+exercise-01-08.cc:3:23: error: missing terminating <span style="color: #8b2252;">" character</span>
+<span style="color: #8b2252;">    3 |   std::cout &lt;&lt; /* ""*/"</span> */;
+      |                       ^~~~~
+exercise-01-08.cc: In <span style="color: #a020f0;">function</span> &#8216;int main()&#8217;:
+exercise-01-08.cc:4:3: error: expected primary-expression before &#8216;return&#8217;
+    4 |   <span style="color: #a020f0;">return</span> 0;
+      |   ^~~~~~
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd3a65a" class="outline-3">
+<h3 id="orgbd3a65a">Section 1.4 Flow of Control | 控制流</h3>
+<div class="outline-text-3" id="text-orgbd3a65a">
+</div>
+<div id="outline-container-org5551d84" class="outline-4">
+<h4 id="org5551d84">1.4.1 The <code>while</code> Statement | <code>while</code> 语句</h4>
+<div class="outline-text-4" id="text-org5551d84">
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#20351;&#29992; while &#35821;&#21477;&#27714; 1 &#21040; 10 &#36825; 10 &#20010;&#25968;&#30340;&#21644;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0, <span style="color: #a0522d;">value</span> = 1;
+  <span style="color: #a020f0;">while</span>(value &lt; 11) {
+    sum += value;
+    ++value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum of 1 to 10 inclusive is "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+复合赋值运算符 <code>+=</code>, 将右侧运算对象加到左侧运算对象, 结果保存在左侧运算对象.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">sum += value;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+sum = sum + value;
+</pre>
+</div>
+
+<p>
+前缀递增运算符 <code>++</code>, 将运算对象的值增加 1. 前缀递减运算符 <code>--</code>, 将运算对象的值减少 1.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">++value;
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#31561;&#20215;&#20110;</span>
+value = value + 1;
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.9</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0, <span style="color: #a0522d;">value</span> = 50;
+  <span style="color: #a020f0;">while</span>(value &lt; 101) {
+    sum += value;
+    ++value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum of 50 to 100 inclusive is "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.10</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">value</span> = 10;
+  <span style="color: #a020f0;">while</span>(value &gt;= 0) {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; value &lt;&lt; <span style="color: #8b2252;">" "</span>;
+    --value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.11</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers in ascending order: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #a020f0;">while</span>(variable_1 &lt; variable_2) {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_1 &lt;&lt; <span style="color: #8b2252;">" "</span>;
+    ++variable_1;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfc016c" class="outline-4">
+<h4 id="orgdfc016c">1.4.2 The <code>for</code> Statement | <code>for</code> 语句</h4>
+<div class="outline-text-4" id="text-orgdfc016c">
+<p>
+<code>for</code> 语句包括循环头和循环体两部分. 循环体包括初始化语句, 循环条件和表达式三部分.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#20351;&#29992; for &#35821;&#21477;&#27714; 1 &#21040; 10 &#36825; 10 &#20010;&#25968;&#30340;&#21644;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0;
+  <span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">value</span> = 1; value &lt; 11; ++value) {
+    sum += value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum of 1 to 10 inclusive is "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.12</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#23558; -100 &#21040; 100 &#30340;&#25972;&#25968;&#30456;&#21152;, sum &#30340;&#32456;&#20540;&#20026; 0</span>
+<span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0;
+<span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = -100; i &lt;=100; ++i)
+  sum +=i;
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.13</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0;
+  <span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">value</span> = 50; value &lt; 101; ++value) {
+    sum += value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum of 50 to 100 inclusive is "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #a020f0;">for</span>(<span style="color: #228b22;">int</span> <span style="color: #a0522d;">value</span> = 10; value &gt;= 0; --value) {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; value &lt;&lt; <span style="color: #8b2252;">" "</span>;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two numbers in ascending order: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #a020f0;">for</span>(; variable_1 &lt; variable_2; ++variable_1) {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_1 &lt;&lt; <span style="color: #8b2252;">" "</span>;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.14</b>
+</p>
+
+<p>
+<code>for</code> 适合循环次数已知的情况. <code>while</code> 适合循环次数未知知的情况.
+</p>
+
+<p>
+<b>Exercise 1.15</b>
+</p>
+
+<p>
+编译器可以检查出的错误包括: 语法错误, 类型错误和声明错误.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #a0522d;">main</span> ( {                                     <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: main &#20989;&#25968;&#30340;&#24418;&#21442;&#21015;&#34920;&#25324;&#21495;&#19981;&#23436;&#25972;</span>
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Read each file."</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl: <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: &#20351;&#29992;&#20882;&#21495;&#32780;&#19981;&#26159;&#20998;&#21495;&#32467;&#26463;&#35821;&#21477;</span>
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; Update master. &lt;&lt; <span style="color: #008b8b;">std</span>::endl;    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: &#23383;&#31526;&#20018;&#23383;&#38754;&#20540;&#24120;&#37327;&#20004;&#20391;&#28431;&#25481;&#20102;&#24341;&#21495;</span>
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Write new master."</span> <span style="color: #008b8b;">std</span>::endl;  <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;&#65292;&#31532;&#20108;&#20010;&#36755;&#20986;&#36816;&#31639;&#31526;&#28431;&#25481;&#20102;</span>
+  <span style="color: #a020f0;">return</span> 0                                     <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: &#27809;&#26377;&#20351;&#29992;&#20998;&#21495;&#32467;&#26463;&#35821;&#21477;</span>
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable &gt;&gt; variable_2;          <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: &#25340;&#20889;&#38169;&#35823;, &#20351;&#29992;&#20102; variable &#32780;&#19981;&#26159; variable1</span>
+  cout &lt;&lt; variable_1 + variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl; <span style="color: #b22222;">// </span><span style="color: #b22222;">&#38169;&#35823;: &#23545;&#26469;&#33258;&#26631;&#20934;&#24211;&#30340;&#21517;&#23383;&#27809;&#26377;&#20351;&#29992; std::</span>
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f86835" class="outline-4">
+<h4 id="org1f86835">1.4.3 Reading an Unknown Number of Inputs | 读取数量不定的输入数据</h4>
+<div class="outline-text-4" id="text-org1f86835">
+<p>
+Windows 系统的文件结束符为 <code>Ctrl</code> + <code>Z</code>, 然后按 <code>Enter</code> 或 <code>Return</code> 键. Unix 和 Unix-like 系统的文件结束符为 <code>Ctrl</code> + <code>D</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#35835;&#21462;&#19981;&#23450;&#25968;&#37327;&#30340;&#25968;&#25454;&#24182;&#27714;&#21644;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0, <span style="color: #a0522d;">value</span> = 0;
+  <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; value) { <span style="color: #b22222;">// </span><span style="color: #b22222;">&#36935;&#21040;&#25991;&#20214;&#32467;&#26463;&#31526;&#25110;&#26080;&#25928;&#36755;&#20837;&#30340;&#26102;&#20505;, &#26465;&#20214;&#20026;&#20551;</span>
+    sum += value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum is: "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.16</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">sum</span> = 0, <span style="color: #a0522d;">value</span> = 0;
+  <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; value) {
+    sum += value;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Sum is: "</span> &lt;&lt; sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2e164fe" class="outline-4">
+<h4 id="org2e164fe">1.4.4 The <code>if</code> Statement | <code>if</code> 语句</h4>
+<div class="outline-text-4" id="text-org2e164fe">
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#32479;&#35745;&#22312;&#36755;&#20837;&#20013;&#30340;&#27599;&#20010;&#20540;&#36830;&#32493;&#20986;&#29616;&#30340;&#27425;&#25968;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">current_value</span> = 0,  <span style="color: #a0522d;">value</span> = 0; <span style="color: #b22222;">// </span><span style="color: #b22222;">current_value &#27491;&#22312;&#32479;&#35745;&#30340;&#25968;, value &#35835;&#20837;&#30340;&#26032;&#20540;</span>
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; current_value) {    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#30830;&#20445;&#30830;&#23454;&#26377;&#25968;&#25454;&#21487;&#20197;&#22788;&#29702;</span>
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">count</span> = 1;
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; value) {
+      <span style="color: #a020f0;">if</span>(value == current_value) {
+        ++count;
+      }
+      <span style="color: #a020f0;">else</span> {
+        <span style="color: #008b8b;">std</span>::cout &lt;&lt; current_value &lt;&lt; <span style="color: #8b2252;">" occurs "</span> &lt;&lt; count &lt;&lt; <span style="color: #8b2252;">" times."</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+        current_value = value;
+        count = 1;
+      }
+    }
+    <span style="color: #b22222;">// </span><span style="color: #b22222;">&#19981;&#35201;&#36951;&#24536;: &#25171;&#21360;&#26368;&#21518;&#19968;&#20010;&#20540;&#30340;&#20010;&#25968;</span>
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; current_value &lt;&lt; <span style="color: #8b2252;">" occurs "</span> &lt;&lt; count &lt;&lt; <span style="color: #8b2252;">" times."</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  }
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+C++ 用 <code>=</code> 进行赋值, 用 <code>==</code> 作为相等运算符.
+</p>
+
+<p>
+<b>Exercise 1.17</b>
+</p>
+
+<p>
+输入值都相等, 只输出一条语句.
+输入值都不等, 有多少个输入值, 就输出多少个语句. 
+</p>
+
+<p>
+<b>Exercise 1.18</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">current_value</span> = 0, <span style="color: #a0522d;">value</span> = 0;
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; current_value) {
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">count</span> = 1;
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; value){
+      <span style="color: #a020f0;">if</span>(current_value == value) {
+        ++count;
+      } <span style="color: #a020f0;">else</span> {
+        <span style="color: #008b8b;">std</span>::cout &lt;&lt; current_value &lt;&lt; <span style="color: #8b2252;">" occurs "</span> &lt;&lt; count &lt;&lt; <span style="color: #8b2252;">" times.\n"</span>;
+        count = 1;
+        current_value = value;
+      }
+    }
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; current_value &lt;&lt; <span style="color: #8b2252;">" occurs "</span> &lt;&lt; count &lt;&lt; <span style="color: #8b2252;">" times"</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  }
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.19</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Enter two distinct numbers: "</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #228b22;">int</span> <span style="color: #a0522d;">variable_1</span> = 0, <span style="color: #a0522d;">variable_2</span> = 0, <span style="color: #a0522d;">temporary_variable</span> = 0;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; variable_1 &gt;&gt; variable_2;
+  <span style="color: #a020f0;">if</span>(variable_2 &lt; variable_1) {
+    temporary_variable = variable_1;
+    variable_1 = variable_2;
+    variable_2 = temporary_variable;
+  }
+  <span style="color: #a020f0;">while</span>(variable_1 &lt; variable_2) {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_1 &lt;&lt; <span style="color: #8b2252;">" "</span>;
+    ++variable_1;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; variable_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+} 
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6bc6ad1" class="outline-3">
+<h3 id="org6bc6ad1">Section 1.5 Introducing Classes | 类简介</h3>
+<div class="outline-text-3" id="text-org6bc6ad1">
+<p>
+通常使用 <code>.h</code> 作为头文件的后缀, 此外还有 <code>.H</code>, <code>.hpp</code>, <code>.hxx</code>. 标准库头文件通常不带后缀.
+</p>
+</div>
+
+<div id="outline-container-org655dbad" class="outline-4">
+<h4 id="org655dbad">1.5.1 <code>Sales_item</code> 类</h4>
+<div class="outline-text-4" id="text-org655dbad">
+<p>
+<code>#include</code> 指令包含来自标准库的头文件使用尖括号 <code>&lt; &gt;</code>, 包含不属于标准库的头文件使用双引号 <code>" "</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#35835;&#21462;&#25968;&#25454;, &#23384;&#20837; Sales_item &#23545;&#35937;, &#36755;&#20986;&#20869;&#23481;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>  
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>   
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">book</span>;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; book;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; book &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+} 
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#23558;&#20004;&#20010; Sales_item &#23545;&#35937;&#30456;&#21152;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item_1</span>, <span style="color: #a0522d;">item_2</span>;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; item_1 &gt;&gt; item_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_1 + item_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+文件重定向: 将标准输入和标准输出与命名文件关联起来.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">&#20174;&#21517;&#20026; in-file &#30340;&#25991;&#20214;&#35835;&#21462;, &#36755;&#20986;&#21040;&#21517;&#20026; out-file &#30340;&#25991;&#20214;</span>
+$ ./a.out &lt;in-file&gt;out-file
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.20</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item</span>;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; item;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; item &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.21</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item_1</span>, <span style="color: #a0522d;">item_2</span>;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; item_1 &gt;&gt; item_2;
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_1 + item_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.22</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item</span>, <span style="color: #a0522d;">item_sum</span>;
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item) {
+    item_sum = item;
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item) {
+      item_sum += item;
+    }
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_sum &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8cede66" class="outline-4">
+<h4 id="org8cede66">1.5.2 A First Look at Member Functions | 初识成员函数</h4>
+<div class="outline-text-4" id="text-org8cede66">
+<p>
+成员函数是定义为类的一部分的函数, 也称为方法.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#26816;&#26597;&#20004;&#20010;&#23545;&#35937;&#26159;&#21542;&#26377;&#30456;&#21516;&#30340; ISBN</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item_1</span>, <span style="color: #a0522d;">item_2</span>;
+  <span style="color: #008b8b;">std</span>::cin &gt;&gt; item_1 &gt;&gt; item_2;
+  <span style="color: #a020f0;">if</span>(item_1.isbn() == item_2.isbn()) {  
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_1 + item_2 &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> 0;
+  }
+  <span style="color: #a020f0;">else</span> {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"Data must refer to same ISBN"</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> -1;
+  }
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.23</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item_current</span>, <span style="color: #a0522d;">item_new</span>;
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item_current) {
+    <span style="color: #228b22;">int</span> <span style="color: #a0522d;">item_current_count</span> = 1;
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item_new) {
+      <span style="color: #a020f0;">if</span>(item_current.isbn() == item_new.isbn()) {
+        ++item_current_count;
+      } <span style="color: #a020f0;">else</span> {
+        <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_current.isbn() &lt;&lt; <span style="color: #8b2252;">" occur times: "</span> &lt;&lt; item_current_count &lt;&lt; <span style="color: #8b2252;">"\n"</span>;
+        item_current = item_new;
+        item_current_count = 1;
+      }
+    }
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_current.isbn() &lt;&lt; <span style="color: #8b2252;">" occur times: "</span> &lt;&lt; item_current_count &lt;&lt; <span style="color: #8b2252;">"\n"</span>;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.24</b>
+</p>
+
+<p>
+同 <code>Exercise 1.23</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf669c7d" class="outline-3">
+<h3 id="orgf669c7d">Section 1.6 The Bookstore Program | 书店程序</h3>
+<div class="outline-text-3" id="text-orgf669c7d">
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #b22222;">// </span><span style="color: #b22222;">&#20174;&#25991;&#20214;&#20013;&#35835;&#21462;&#38144;&#21806;&#35760;&#24405;, &#36755;&#20986;&#20876;&#25968;, &#24635;&#38144;&#21806;&#39069;&#21644;&#24179;&#22343;&#21806;&#20215;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">total</span>;
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; total) {
+    <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">trans</span>;
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; trans) {
+      <span style="color: #a020f0;">if</span>(total.isbn() == trans.isbn()) {
+        total += trans;
+      }
+      <span style="color: #a020f0;">else</span> {
+        <span style="color: #008b8b;">std</span>::cout &lt;&lt; total &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+        total = trans;
+      }
+    }
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; total &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  }
+  <span style="color: #a020f0;">else</span> {
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #8b2252;">"No data?!"</span> &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+    <span style="color: #a020f0;">return</span> -1;
+  }
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+<b>Exercise 1.25</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">&lt;iostream&gt;</span>
+<span style="color: #483d8b;">#include</span> <span style="color: #8b2252;">"Sales_item.h"</span>
+<span style="color: #228b22;">int</span> <span style="color: #0000ff;">main</span>() {
+  <span style="color: #228b22;">Sales_item</span> <span style="color: #a0522d;">item_current</span>, <span style="color: #a0522d;">item_new</span>;
+  <span style="color: #a020f0;">if</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item_current) {
+    <span style="color: #a020f0;">while</span>(<span style="color: #008b8b;">std</span>::cin &gt;&gt; item_new) {
+      <span style="color: #a020f0;">if</span>(item_current.isbn() == item_new.isbn()) {
+        item_current += item_new;
+      } <span style="color: #a020f0;">else</span> {
+        <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_current &lt;&lt; <span style="color: #8b2252;">"\n"</span>;
+        item_current = item_new;
+      }
+    }
+    <span style="color: #008b8b;">std</span>::cout &lt;&lt; item_current &lt;&lt; <span style="color: #8b2252;">"\n"</span>;
+  }
+  <span style="color: #008b8b;">std</span>::cout &lt;&lt; <span style="color: #008b8b;">std</span>::endl;
+  <span style="color: #a020f0;">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8835538" class="outline-3">
+<h3 id="org8835538">Chapter Summary | 小结</h3>
+</div>
+
+<div id="outline-container-org1af6580" class="outline-3">
+<h3 id="org1af6580">Defined Terms | 术语表</h3>
+<div class="outline-text-3" id="text-org1af6580">
+<ul class="org-ul">
+<li>默认情况下, 读 <code>cin</code> 会刷新 <code>cout</code>, 程序非正常终止时也会刷新 <code>cout</code>.</li>
+<li>默认情况下, <code>cerr</code> 的数据不缓冲.</li>
+<li>默认情况下, <code>clog</code> 的数据是缓冲的.</li>
+<li>条件: 求值结果为真或假的表达式. 通常用值 0 表示假, 用非零值表示真.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
